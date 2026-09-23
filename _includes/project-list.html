@@ -1,0 +1,41 @@
+{% comment %}
+  Renders the _projects entries whose `section` matches include.section,
+  ordered by `order`. Photo on the left, description on the right.
+{% endcomment %}
+{% include base_path %}
+{% assign items = site.projects | where: "section", include.section | sort: "order" %}
+<div class="proj-list">
+{% for p in items %}
+  <article class="proj">
+    <div class="proj-media{% if p.images.size > 1 %} proj-media--pair{% endif %}">
+      {% if p.images %}
+        {% for img in p.images %}
+          <figure>
+            <a href="{{ base_path }}/images/projects/{{ img.src }}"><img src="{{ base_path }}/images/projects/{{ img.src }}" alt="{{ img.caption | default: p.title }}" loading="lazy"></a>
+            {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+          </figure>
+        {% endfor %}
+      {% else %}
+        <div class="proj-icon"><i class="{{ p.icon | default: 'fa-solid fa-flask' }}" aria-hidden="true"></i></div>
+      {% endif %}
+    </div>
+
+    <div class="proj-body">
+      <h3 class="proj-title">{{ p.title }}</h3>
+      <p class="proj-meta">{{ p.org }}{% if p.dates %} · <span class="nowrap">{{ p.dates }}</span>{% endif %}</p>
+      {{ p.content | markdownify }}
+      {% if p.extra_image %}
+        <figure class="proj-extra">
+          <a href="{{ base_path }}/images/projects/{{ p.extra_image.src }}"><img src="{{ base_path }}/images/projects/{{ p.extra_image.src }}" alt="{{ p.extra_image.caption }}" loading="lazy"></a>
+          <figcaption>{{ p.extra_image.caption }}</figcaption>
+        </figure>
+      {% endif %}
+      {% if p.links %}
+        <ul class="proj-links">
+          {% for l in p.links %}<li><a href="{{ l.url }}">{{ l.label }} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div>

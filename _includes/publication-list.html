@@ -1,0 +1,16 @@
+{% include base_path %}
+{% assign pubs = site.publications | sort: "date" | reverse %}
+<div class="pub-list">
+{% for p in pubs %}
+  <article class="pub">
+    <h3 class="pub-title"><a href="{{ p.paperurl }}">{{ p.title }}</a></h3>
+    <p class="pub-authors">{{ p.authors }}</p>
+    <p class="pub-venue"><em>{{ p.venue }}</em>{% if p.venue_detail %}, {{ p.venue_detail }}{% endif %}</p>
+    {{ p.content | markdownify }}
+    <p class="pub-links">
+      <a class="btn btn--small btn--inverse" href="{{ p.paperurl }}">Full paper</a>
+      {% if p.doi %}<span class="pub-doi">doi:{{ p.doi }}</span>{% endif %}
+    </p>
+  </article>
+{% endfor %}
+</div>

@@ -1,36 +1,44 @@
 ---
 permalink: /
-title: "About"
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
-<!--
-  TODO: Replace everything below with your own text.
-  A good opening is 2-4 short paragraphs: who you are, what you work on,
-  and what you are interested in right now.
--->
+{% comment %}
+  The whole site is this one scrolling page. Each <section> id matches a nav
+  link in _data/navigation.yml. Content lives in:
+    Education / Industry rows  -> _data/experience.yml
+    Publications               -> _publications/
+    Projects                   -> _projects/
+{% endcomment %}
 
-I'm Robert Purcaru — TODO: one-sentence introduction (role, field, institution or
-company).
+<section id="about" class="home-section" markdown="1">
+<h2 class="section-title">About</h2>
 
-## Research interests
+I'm an MSc student in Computational Science and Engineering at ETH Zürich,
+specializing in robotics. Before that I was a quantitative analyst at
+Squarepoint Capital, and I studied Engineering Science at the University of
+Toronto, where I worked on balloon-borne telescopes, numerical optimization, and embedded
+hardware.
 
-TODO: a short paragraph, or a list:
+<h3 class="subsection-title">Education</h3>
+<div class="xp-list">
+{% for item in site.data.experience.education %}{% include experience-row.html item=item %}{% endfor %}
+</div>
+</section>
 
-- Interest one
-- Interest two
-- Interest three
+<section id="publications" class="home-section">
+<h2 class="section-title">Publications</h2>
+{% include publication-list.html %}
+</section>
 
-## What I'm working on
+<section id="industry" class="home-section">
+<h2 class="section-title">Industry Experience</h2>
+<div class="xp-list">
+{% for item in site.data.experience.industry %}{% include experience-row.html item=item %}{% endfor %}
+</div>
+</section>
 
-TODO: a paragraph on current work. Link out to a [project](/projects/) or a
-[paper](/publications/) where it helps.
-
-## Get in touch
-
-TODO: how you'd like people to reach you. The sidebar handles email and social
-links; use this space for anything extra — office hours, availability,
-collaboration interests.
+<section id="projects" class="home-section">
+<h2 class="section-title">Projects</h2>
+{% include project-list.html section="projects" %}
+</section>

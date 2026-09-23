@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Robert Purcaru"
 title_separator          : "-"
 name                     : &name "Robert Purcaru"
-description              : &description "Personal website of Robert Purcaru." # TODO: one-line description used for SEO
+description              : &description "Robert Purcaru — MSc student in Computational Science and Engineering at ETH Zürich, specializing in robotics."
 url                      : https://robert-purcaru.github.io # the base hostname & protocol for your site
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "robert-purcaru/robert-purcaru.github.io"
@@ -21,14 +21,14 @@ repository               : "robert-purcaru/robert-purcaru.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png" # TODO: drop your photo in /images/ and point this at it
+  avatar           : "profile.jpg"
   name             : "Robert Purcaru"
   pronouns         : # example: "she/her"
-  bio              : "TODO: one or two lines about you for the sidebar."
-  location         : # TODO: e.g. "San José, Costa Rica"
-  employer         : # TODO: e.g. "University of X"
+  bio              : "MSc Computational Science & Engineering (Robotics), ETH Zürich"
+  location         : "Zürich, Switzerland"
+  employer         :
   uri              : # URL
-  email            : "a.robertpurcaru@gmail.com" # TODO: remove if you'd rather not publish it
+  email            : "rpurcaru@ethz.ch"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -212,12 +212,12 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  # Both collections are rendered as lists on their pages (Research, Projects)
+  # rather than as individual pages, so output is off.
   publications:
-    output: true
-    permalink: /:collection/:path/
+    output: false
   projects:
-    output: true
-    permalink: /:collection/:path/
+    output: false
 
 
 # These settings control how pages and collections are included in the site

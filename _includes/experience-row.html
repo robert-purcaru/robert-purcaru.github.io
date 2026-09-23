@@ -1,0 +1,20 @@
+{% include base_path %}
+<div class="xp-item">
+  <div class="xp-row">
+    <div class="xp-logo">
+      {% if include.item.logo %}
+        <img src="{{ base_path }}/images/logos/{{ include.item.logo }}" alt="{{ include.item.org }} logo">
+      {% else %}
+        <span class="xp-monogram">{{ include.item.initials }}</span>
+      {% endif %}
+    </div>
+    <div class="xp-text">
+      <div class="xp-org">{{ include.item.org }}{% if include.item.dates %}<span class="xp-dates">{{ include.item.dates }}</span>{% endif %}</div>
+      <div class="xp-role">{{ include.item.role }}</div>
+      <div class="xp-blurb">{{ include.item.blurb }}</div>
+    </div>
+  </div>
+  {% if include.item.details %}
+    <div class="xp-details">{{ include.item.details | markdownify }}</div>
+  {% endif %}
+</div>

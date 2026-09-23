@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Site-specific styles: experience rows, projects list, publications list
+   ========================================================================== */
+
+/* --- Single-page sections ----------------------------------------------- */
+
+html { scroll-behavior: smooth; }
+
+.home-section {
+  // keep section headings clear of the fixed masthead when jumped to
+  scroll-margin-top: 5em;
+  padding-bottom: 0.5em;
+
+  // top padding also gives the nav's scroll-to-anchor some headroom below the
+  // fixed masthead
+  & + .home-section { padding-top: 2em; }
+}
+
+.page__content .section-title {
+  margin: 0 0 0.8em;
+  padding: 0;
+  border: 0;
+  font-size: 1.6em;
+}
+
+.subsection-title {
+  margin: 1.6em 0 0.2em;
+  font-size: 1.1em;
+  color: $dark-gray;
+}
+
+/* --- Experience / education rows ---------------------------------------- */
+
+.xp-list {
+  margin: 0.5em 0 2em;
+}
+
+.xp-item {
+  padding: 0.85em 0;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child { border-bottom: 0; }
+}
+
+.xp-row {
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+}
+
+.xp-details {
+  margin: 0.8em 0 0.2em calc(112px + 1.1em);
+  font-size: 0.9em;
+
+  p { margin: 0 0 0.7em; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.xp-logo {
+  flex: 0 0 112px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.xp-monogram {
+  font-family: $header-font-family;
+  font-weight: 700;
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
+  color: $dark-gray;
+}
+
+.xp-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.xp-org {
+  font-weight: 700;
+  color: $darker-gray;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
+  row-gap: 0;
+  flex-wrap: wrap;
+}
+
+.xp-dates {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: $gray;
+  white-space: nowrap;
+}
+
+.xp-role {
+  color: $text-color;
+}
+
+.xp-blurb {
+  font-size: 0.9em;
+  color: $gray;
+}
+
+/* --- Projects ------------------------------------------------------------ */
+
+.proj {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.75em;
+  padding: 1.5em 0;
+  border-bottom: 1px solid $border-color;
+
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: 0; }
+
+  @include breakpoint(max-width 767px) {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}
+
+.proj-media {
+  align-self: start;
+
+  figure {
+    display: block;
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  figcaption {
+    margin: 0.35em 0 0;
+    font-family: $global-font-family;
+    font-size: 0.75em;
+    color: $gray;
+    text-align: center;
+  }
+
+  // Two portrait photos side by side (e.g. acrobot at rest / balancing)
+  &--pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+
+    img { height: 320px; max-height: none; }
+  }
+
+  @include breakpoint(max-width 767px) {
+    max-width: 420px;
+  }
+}
+
+.proj-icon {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: $lighter-gray;
+  color: $light-gray;
+  font-size: 3.25em;
+
+  @include breakpoint(max-width 767px) {
+    display: none;
+  }
+}
+
+.proj-body {
+  min-width: 0;
+
+  p { margin: 0 0 0.9em; }
+}
+
+.proj-title {
+  margin: 0 0 0.15em;
+  padding: 0;
+  border: 0;
+  font-size: 1.2em;
+}
+
+.proj-meta {
+  font-size: 0.85em;
+  color: $gray;
+  margin-bottom: 0.9em !important;
+}
+
+.proj-extra {
+  display: block;
+  margin: 0.5em 0 1em;
+  max-width: 260px;
+
+  img {
+    display: block;
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  figcaption {
+    margin: 0.35em 0 0;
+    font-family: $global-font-family;
+    font-size: 0.75em;
+    color: $gray;
+  }
+}
+
+.nowrap { white-space: nowrap; }
+
+.proj-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+
+  li { margin: 0.2em 0; }
+
+  i { font-size: 0.75em; margin-left: 0.2em; }
+}
+
+/* --- Publications ------------------------------------------------------------ */
+
+.pub {
+  padding: 1.25em 0;
+  border-bottom: 1px solid $border-color;
+
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: 0; }
+
+  p { margin: 0 0 0.8em; }
+}
+
+.pub-title {
+  margin: 0 0 0.3em;
+  padding: 0;
+  border: 0;
+  font-size: 1.15em;
+  line-height: 1.3;
+
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}
+
+.pub-authors {
+  font-size: 0.9em;
+  margin-bottom: 0.1em !important;
+}
+
+.pub-venue {
+  font-size: 0.9em;
+  color: $gray;
+}
+
+.pub-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9em;
+  margin-top: 1em !important;
+
+  .btn { margin: 0; }
+}
+
+.pub-doi {
+  font-size: 0.8em;
+  color: $gray;
+}
+
+/* Smaller logo tiles on phones */
+@include breakpoint(max-width 767px) {
+  .xp-row { gap: 0.8em; }
+  .xp-logo { flex-basis: 80px; height: 50px; }
+  .xp-details { margin-left: 0; }
+  .xp-monogram { font-size: 0.9em; }
+}

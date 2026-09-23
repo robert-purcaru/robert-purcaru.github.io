@@ -1,0 +1,73 @@
+# Rows on the homepage. Each entry renders as a logo on the left with three
+# lines beside it: org, role, and a short description. Order here is the
+# order on the page. `details` (optional,
+# Markdown) is shown underneath.
+#
+# logo:     file in /images/logos/. Leave blank to show a text tile instead.
+# initials: text for that tile when there is no logo.
+
+education:
+  - org: "ETH Zürich"
+    role: "MSc Computational Science and Engineering"
+    blurb: "Specializing in Robotics"
+    dates: "2026 – present"
+    logo: "eth.jpg"
+
+  - org: "University of Toronto"
+    role: "BASc Engineering Science (Honours)"
+    blurb: "Electrical & Computer Engineering major · GPA 3.86/4.00"
+    dates: "2020 – 2025"
+    logo: "uoft.jpg"
+
+industry:
+  - org: "Squarepoint Capital"
+    role: "Quantitative Analyst"
+    blurb: "High-frequency equities trading"
+    dates: "May 2025 – Aug 2026"
+    logo: "squarepoint.jpg"
+
+  - org: "Balloon Astrophysics Group"
+    role: "Undergraduate Researcher · Prof. C. Barth Netterfield"
+    blurb: "SuperBIT balloon-borne telescope · University of Toronto"
+    dates: "May 2022 – Apr 2025"
+    logo: "superbit.jpg"
+    details: |
+      Helped design hardware and software for various systems on SuperBIT, a telescope flown on a NASA super-pressure
+      balloon in 2023. I helped calibrate parts of the optical control stack,
+      and designed PCBs, housings, and cabling for telemetry packages, qualifying
+      them in a high-altitude test chamber. When a critical defect was found in the
+      supplier's data-recovery system, I designed, tested, and integrated a working
+      replacement.
+
+      On the software side, I characterised packet timing across Linux kernels and
+      wrote an Earliest Deadline First scheduler that guaranteed response times
+      between the flight computer and an Ethernet-attached microcontroller. I also
+      proposed and bench-tested the computer–controller architecture for the next
+      telescope, GigaBIT: custom PCBs, microcontroller benchmarks, and model
+      predictive control solvers integrated with Linux.
+
+      [SuperBIT's first research images (NASA)](https://science.nasa.gov/blogs/super-pressure-balloon/2023/04/20/balloon-borne-superbit-telescope-releases-1st-research-images/)
+      · [Paper: data recovery by parachute](https://doi.org/10.3390/aerospace10110960)
+
+  - org: "Intel Corporation"
+    role: "Software Engineer"
+    blurb: "FPGA hardware acceleration"
+    dates: "May 2023 – Aug 2024"
+    logo: "intel.png"
+    details: |
+      Led a project building C++ and Python utilities that let users call
+      FPGA-accelerated code through user-space libraries. Worked with the high-level
+      synthesis teams on C++ kernel drivers
+      for direct memory access between processors and FPGA cards, removing the
+      setup copies between host and FPGA memory. Reworked a retiming algorithm
+      with a branch-and-bound approach that prunes suboptimal solutions, cutting
+      runtime by 12% across the test cases.
+
+  - org: "NerveX Neurotechnologies"
+    role: "Software Engineer"
+    blurb: "Seizure detection and monitoring"
+    dates: "May 2022 – Aug 2022"
+    logo: "nervex.jpg"
+    details: |
+      Spun off from the Intelligent Sensory Microsystems Lab
+      at the University of Toronto.

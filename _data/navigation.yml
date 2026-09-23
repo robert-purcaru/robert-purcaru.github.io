@@ -1,20 +1,22 @@
-# The order of the links in the header of the website.
-#
-# Changing the order here adjusts the order in the nav bar. Removing a link
-# prevents it from showing in the header, but does not remove the page itself.
+# Links in the header. The site is a single scrolling page, so each link jumps
+# to a section of the homepage by its id (see _pages/about.md).
 
 main:
   - title: "About"
-    url: /
-
-  - title: "Projects"
-    url: /projects/
+    url: /#about
 
   - title: "Publications"
-    url: /publications/
+    url: /#publications
 
-  - title: "Education"
-    url: /education/
+  - title: "Industry Experience"
+    url: /#industry
 
-  - title: "CV"
-    url: /cv/
+  - title: "Projects"
+    url: /#projects
+
+  # Separate pages, hidden for now. Uncomment to bring them back into the nav.
+  # - title: "Education"
+  #   url: /education/
+  #
+  # - title: "CV"
+  #   url: /cv/
