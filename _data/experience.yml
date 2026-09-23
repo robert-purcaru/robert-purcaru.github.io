@@ -9,13 +9,13 @@
 education:
   - org: "ETH Zürich"
     role: "MSc Computational Science and Engineering"
-    blurb: "Specialization: Robotics"
+    blurb: "Robotics Specialization"
     dates: "2026 – present"
     logo: "eth.jpg"
 
   - org: "University of Toronto"
     role: "BASc Engineering Science (Honours)"
-    blurb: "Electrical & Computer Engineering major"
+    blurb: "Electrical & Computer Engineering Specialization"
     dates: "2020 – 2025"
     logo: "uoft.jpg"
 
