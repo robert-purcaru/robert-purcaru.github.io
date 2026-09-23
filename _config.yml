@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Robert Purcaru"
 title_separator          : "-"
 name                     : &name "Robert Purcaru"
-description              : &description "Robert Purcaru — MSc student in Computational Science and Engineering at ETH Zürich, specializing in robotics."
+description              : &description "Robert Purcaru — MSc student in Computational Science and Engineering at ETH Zürich, specialization: Robotics."
 url                      : https://robert-purcaru.github.io # the base hostname & protocol for your site
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "robert-purcaru/robert-purcaru.github.io"

@@ -15,7 +15,7 @@ author_profile: true
 <h2 class="section-title">About</h2>
 
 I'm an MSc student in Computational Science and Engineering at ETH Zürich,
-Specialization: robotics. Before that I was a quantitative analyst at
+specializing in robotics. Before that I was a quantitative analyst at
 Squarepoint Capital, and I studied Engineering Science at the University of
 Toronto, where I worked on balloon-borne telescopes, numerical optimization, and embedded
 hardware.
